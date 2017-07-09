@@ -65,3 +65,7 @@ c:\users\ms\documents\visual studio 2017\Projects\ProjectCL\ProjectCL\bin\Micros
 c:\users\ms\documents\visual studio 2017\Projects\ProjectCL\ProjectCL\obj\Debug\ProjectCL.csprojResolveAssemblyReference.cache
 c:\users\ms\documents\visual studio 2017\Projects\ProjectCL\ProjectCL\obj\Debug\ProjectCL.dll
 c:\users\ms\documents\visual studio 2017\Projects\ProjectCL\ProjectCL\obj\Debug\ProjectCL.pdb
+C:\Users\MS\Documents\Visual Studio 2017\Projects\ProjectCL\ProjectCL\bin\EntityFramework.dll
+C:\Users\MS\Documents\Visual Studio 2017\Projects\ProjectCL\ProjectCL\bin\EntityFramework.SqlServer.dll
+C:\Users\MS\Documents\Visual Studio 2017\Projects\ProjectCL\ProjectCL\bin\EntityFramework.xml
+C:\Users\MS\Documents\Visual Studio 2017\Projects\ProjectCL\ProjectCL\bin\EntityFramework.SqlServer.xml
