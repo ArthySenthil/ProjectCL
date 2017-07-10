@@ -12,14 +12,14 @@ namespace ProjectCL.DAL
         {
             var students = new List<Student>
             {
-            new Student{FirstMidName="Carson",LastName="Alexander",AssignmentDate=DateTime.Parse("2005-09-01")},
-            new Student{FirstMidName="Meredith",LastName="Alonso",AssignmentDate=DateTime.Parse("2002-09-01")},
-            new Student{FirstMidName="Arturo",LastName="Anand",AssignmentDate=DateTime.Parse("2003-09-01")},
-            new Student{FirstMidName="Gytis",LastName="Barzdukas",AssignmentDate=DateTime.Parse("2002-09-01")},
-            new Student{FirstMidName="Yan",LastName="Li",AssignmentDate=DateTime.Parse("2002-09-01")},
-            new Student{FirstMidName="Peggy",LastName="Justice",AssignmentDate=DateTime.Parse("2001-09-01")},
-            new Student{FirstMidName="Laura",LastName="Norman",AssignmentDate=DateTime.Parse("2003-09-01")},
-            new Student{FirstMidName="Nino",LastName="Olivetto",AssignmentDate=DateTime.Parse("2005-09-01")}
+            new Student{FirstName="Carson",LastName="Alexander",AssignmentDate=DateTime.Parse("2017-06-01")},
+            new Student{FirstName="Meredith",LastName="Alonso",AssignmentDate=DateTime.Parse("2017-06-05")},
+            new Student{FirstName="Arturo",LastName="Anand",AssignmentDate=DateTime.Parse("2017-06-07")},
+            new Student{FirstName="Gytis",LastName="Barzdukas",AssignmentDate=DateTime.Parse("2017-06-09")},
+            new Student{FirstName="Yan",LastName="Li",AssignmentDate=DateTime.Parse("2017-06-11")},
+            new Student{FirstName="Peggy",LastName="Justice",AssignmentDate=DateTime.Parse("2017-06-21")},
+            new Student{FirstName="Laura",LastName="Norman",AssignmentDate=DateTime.Parse("2017-06-25")},
+            new Student{FirstName="Nino",LastName="Olivetto",AssignmentDate=DateTime.Parse("2017-06-22")}
             };
 
             students.ForEach(s => context.Students.Add(s));

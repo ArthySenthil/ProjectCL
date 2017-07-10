@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<ProjectCL.Models.Student>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Students List";
 }
 
-<h2>Index</h2>
+<h2>Students List</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -15,7 +15,7 @@
             @Html.DisplayNameFor(model => model.LastName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.FirstMidName)
+            @Html.DisplayNameFor(model => model.FirstName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.AssignmentDate)
@@ -29,7 +29,7 @@
             @Html.DisplayFor(modelItem => item.LastName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.FirstMidName)
+            @Html.DisplayFor(modelItem => item.FirstName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.AssignmentDate)

@@ -1,10 +1,10 @@
 ﻿@model ProjectCL.Models.Student
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Student Details";
 }
 
-<h2>Details</h2>
+<h2>Student Details</h2>
 
 <div>
     <h4>Student</h4>
@@ -19,11 +19,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.FirstMidName)
+            @Html.DisplayNameFor(model => model.FirstName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.FirstMidName)
+            @Html.DisplayFor(model => model.FirstName)
         </dd>
 
         <dt>
@@ -32,6 +32,28 @@
 
         <dd>
             @Html.DisplayFor(model => model.AssignmentDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Assignments)
+        </dt>
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>Book Title</th>
+                    <th>Reading Level</th>
+                </tr>
+                @foreach (var item in Model.Assignments)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Book.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Level)
+                        </td>
+                    </tr>
+                }
+            </table>
         </dd>
 
     </dl>
