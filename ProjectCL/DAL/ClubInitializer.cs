@@ -12,24 +12,24 @@ namespace ProjectCL.DAL
         {
             var students = new List<Student>
             {
-            new Student{FirstName="Carson",LastName="Alexander",AssignmentDate=DateTime.Parse("2017-06-01")},
-            new Student{FirstName="Meredith",LastName="Alonso",AssignmentDate=DateTime.Parse("2017-06-05")},
-            new Student{FirstName="Arturo",LastName="Anand",AssignmentDate=DateTime.Parse("2017-06-07")},
-            new Student{FirstName="Gytis",LastName="Barzdukas",AssignmentDate=DateTime.Parse("2017-06-09")},
-            new Student{FirstName="Yan",LastName="Li",AssignmentDate=DateTime.Parse("2017-06-11")},
-            new Student{FirstName="Peggy",LastName="Justice",AssignmentDate=DateTime.Parse("2017-06-21")},
-            new Student{FirstName="Laura",LastName="Norman",AssignmentDate=DateTime.Parse("2017-06-25")},
-            new Student{FirstName="Nino",LastName="Olivetto",AssignmentDate=DateTime.Parse("2017-06-22")}
+            new Student{FirstName="Shrinita",LastName="Senthilkumar",AssignmentDate=DateTime.Parse("2017-06-01")},
+            new Student{FirstName="Ashrita",LastName="Senthilkumar",AssignmentDate=DateTime.Parse("2017-06-05")},
+            new Student{FirstName="Senthil",LastName="Muniyandi",AssignmentDate=DateTime.Parse("2017-06-07")},
+            new Student{FirstName="Radha",LastName="Sundar",AssignmentDate=DateTime.Parse("2017-06-09")},
+            new Student{FirstName="Vasu",LastName="Sriram",AssignmentDate=DateTime.Parse("2017-06-11")},
+            new Student{FirstName="Danvi",LastName="Viswaa",AssignmentDate=DateTime.Parse("2017-06-21")},
+            new Student{FirstName="Vishnu",LastName="Viswaa",AssignmentDate=DateTime.Parse("2017-06-25")},
+            new Student{FirstName="Praji",LastName="Gopal",AssignmentDate=DateTime.Parse("2017-06-22")}
             };
 
             students.ForEach(s => context.Students.Add(s));
             context.SaveChanges();
             var books = new List<Book>
             {
-            new Book{BookID=1050,Title="Goldilocks and the 3 bears",Description="Little girl lost in the woods and the 3 bears",},
-             new Book{BookID=4022,Title="The hungry caterpillar",Description="Story of a tiny caterpillar who is very very hungry",},
-             new Book{BookID=4041,Title="Goldilocks and the 3 bears",Description="Little girl lost in the woods and the 3 bears",},
-            new Book{BookID=1045,Title="Goldilocks and the 3 bears",Description="Little girl lost in the woods and the 3 bears",},
+            new Book{BookID=1050,Title="Goldilocks and the 3 bears",Author="xxx",ReadingLevel="A",},
+             new Book{BookID=4022,Title="The hungry caterpillar",Author="yyy",ReadingLevel="B",},
+             new Book{BookID=4041,Title="Cinderella",Author="zzz",ReadingLevel="C",},
+            new Book{BookID=1045,Title="Snow White",Author="aaa",ReadingLevel="D",},
             
             };
             books.ForEach(s => context.Books.Add(s));

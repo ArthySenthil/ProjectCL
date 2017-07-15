@@ -43,8 +43,7 @@ namespace ProjectCL.Controllers
         }
 
         // POST: Student/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+       
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "LastName, FirstName, AssignmentDate")]Student student)
@@ -58,9 +57,9 @@ namespace ProjectCL.Controllers
                     return RedirectToAction("Index");
                 }
             }
-            catch (DataException /* dex */)
+            catch (DataException)
             {
-                //Log the error (uncomment dex variable name and add a line here to write a log.
+                //Log the error 
                 ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
             }
 
@@ -83,8 +82,7 @@ namespace ProjectCL.Controllers
         }
 
         // POST: Student/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+       
         
         [HttpPost, ActionName("Edit")]
         [ValidateAntiForgeryToken]
@@ -104,9 +102,9 @@ namespace ProjectCL.Controllers
 
                     return RedirectToAction("Index");
                 }
-                catch (DataException /* dex */)
+                catch (DataException)
                 {
-                    //Log the error (uncomment dex variable name and add a line here to write a log.
+                    //Log the error 
                     ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists, see your system administrator.");
                 }
             }
@@ -143,9 +141,9 @@ namespace ProjectCL.Controllers
                 db.Students.Remove(student);
                 db.SaveChanges();
             }
-            catch (DataException/* dex */)
+            catch (DataException)
             {
-                //Log the error (uncomment dex variable name and add a line here to write a log.
+                //Log the error 
                 return RedirectToAction("Delete", new { id = id, saveChangesError = true });
             }
             return RedirectToAction("Index");

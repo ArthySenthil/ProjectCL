@@ -40,7 +40,8 @@
             <table class="table">
                 <tr>
                     <th>Book Title</th>
-                    <th>Reading Level</th>
+                    <th>Author</th>
+                    <th>Reading Group</th>
                 </tr>
                 @foreach (var item in Model.Assignments)
                 {
@@ -49,7 +50,10 @@
                             @Html.DisplayFor(modelItem => item.Book.Title)
                         </td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.Level)
+                            @Html.DisplayFor(modelItem => item.Book.Author)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Book.ReadingLevel)
                         </td>
                     </tr>
                 }

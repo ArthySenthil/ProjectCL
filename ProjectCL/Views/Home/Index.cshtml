@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<ProjectCL.Models.Book>
+@{
     ViewBag.Title = "Kids Reading Club!";
 }
 
@@ -7,15 +8,21 @@
     <p class="lead">READING PROGRAM FOR KIDS AGES 4 - 10.<br>THE PERFECT ﻿SOLUTION ﻿TO ​YOUR AFTER ​​SCHOOL DILEMMA!</p>
 </div>
 
-<div class="row">
+
     <h2>BOOKS WE ARE READING THIS MONTH</h2>
-    <div class="col-md-4">
-        <p class="book-title">
-         The Hungry Caterpillar
-        </p>
-        <p class="book-desc">
-            This book shows how a tiny caterpillar grows into a beautiful butterfly. Kids enjoy the way Eric Carle describes how the caterpillar eats different food items each day. A good book to introduce numbers, days of the week and different food items.
-        </p>
-    </div>
-    
-</div>
+  <table class="table">
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+
+
+        </tr>
+
+
+    }
+</table>
+
