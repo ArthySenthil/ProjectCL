@@ -1,4 +1,9 @@
-﻿body {
+﻿html {
+    font-family: 'Cambo', serif;
+}
+
+body {
+    font-family: 'Cambo', serif !important;
     padding-top: 50px;
     padding-bottom: 20px;
 }
@@ -16,9 +21,33 @@
     white-space: normal;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
+/* Change the color of the header
+*/
+.navbar-inverse {
+    background-color: #285628 !important;
+    border-color: #285628;
+}
+
+    .navbar-inverse .navbar-brand {
+        color: #f5f5f5 !important;
+    }
+    .navbar-inverse .navbar-toggle {
+        border-color: #285628;
+    }
+    .navbar-inverse .navbar-collapse,
+    .navbar-inverse .navbar-form {
+        border-color: #285628;
+    }
+    .navbar-inverse .navbar-toggle:hover,
+    .navbar-inverse .navbar-toggle:focus {
+        background-color: #285628;
+    }
+        /* Set width on the form input elements since they're 100% wide by default */
+        input, select, textarea {
     max-width: 280px;
+}
+
+.jumbotron {
+   
+    background-color: #c9f3a7 !important;
 }

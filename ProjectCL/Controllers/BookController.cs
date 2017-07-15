@@ -18,7 +18,7 @@ namespace ProjectCL.Controllers
         // GET: Book
         public ActionResult Index()
         {
-            return View(db.Books.ToList());
+            return View(db.Books.ToList()); // list of books in database
         }
 
         // GET: Book/Details/5
@@ -26,14 +26,15 @@ namespace ProjectCL.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest,"Request cannot be completed, delete /Details in the URL and hit enter");
             }
             Book book = db.Books.Find(id);
+            // Check if there is book to see the details.
             if (book == null)
             {
-                return HttpNotFound();
+                return HttpNotFound("No Book details found"); // return error message if null
             }
-            return View(book);
+            return View(book); // return book details
         }
 
         // GET: Book/Create
@@ -43,16 +44,16 @@ namespace ProjectCL.Controllers
         }
 
         // POST: Book/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "BookID,Title,Author,ReadingLevel")] Book book)
         {
+            // check if the model state is valid.
             if (ModelState.IsValid)
             {
-                db.Books.Add(book);
-                db.SaveChanges();
+                db.Books.Add(book);  // add the book to database
+                db.SaveChanges(); // save the new book to database
                 return RedirectToAction("Index");
             }
 
@@ -64,27 +65,27 @@ namespace ProjectCL.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest, "Request cannot be completed, delete /Edit in the URL and hit enter");
             }
             Book book = db.Books.Find(id);
+            // check if there is book to edit.
             if (book == null)
             {
                 return HttpNotFound();
             }
-            return View(book);
+            return View(book); // return the book to edit
         }
 
         // POST: Book/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "BookID,Title,Author,ReadingLevel")] Book book)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(book).State = EntityState.Modified;
-                db.SaveChanges();
+                db.Entry(book).State = EntityState.Modified; // chage the state to modified
+                db.SaveChanges(); // save changes afer editing
                 return RedirectToAction("Index");
             }
             return View(book);
@@ -98,11 +99,12 @@ namespace ProjectCL.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Book book = db.Books.Find(id);
+            // check if the book exists
             if (book == null)
             {
-                return HttpNotFound();
+                return HttpNotFound("Book not found"); // return error message
             }
-            return View(book);
+            return View(book); // return the book to be deleted
         }
 
         // POST: Book/Delete/5
@@ -111,9 +113,9 @@ namespace ProjectCL.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Book book = db.Books.Find(id);
-            db.Books.Remove(book);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            db.Books.Remove(book); // delete book from database.
+            db.SaveChanges(); // save cahnges to database.
+            return RedirectToAction("Index");// return to books page
         }
 
         protected override void Dispose(bool disposing)

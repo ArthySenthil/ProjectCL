@@ -52,9 +52,10 @@ audio:not([controls]) {
 }
 
 html {
-  font-family: sans-serif;
-  -webkit-text-size-adjust: 100%;
-      -ms-text-size-adjust: 100%;
+     font-family: 'Cambo', serif;
+   
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
 }
 
 body {
@@ -311,11 +312,12 @@ html {
 }
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.428571429;
-  color: #333333;
-  background-color: #ffffff;
+    font-family:'Cambo', serif;
+    
+    font-size: 14px;
+    line-height: 1.428571429;
+    color: #333333;
+    background-color: #ffffff;
 }
 
 input,
@@ -4501,8 +4503,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-inverse {
-  background-color: #222222;
-  border-color: #080808;
+    background-color: #285628;
+    border-color: #285628;
 }
 
 .navbar-inverse .navbar-brand {
@@ -4543,23 +4545,23 @@ textarea.input-group-sm > .input-group-btn > .btn {
   background-color: transparent;
 }
 
-.navbar-inverse .navbar-toggle {
-  border-color: #333333;
-}
+    .navbar-inverse .navbar-toggle {
+        border-color: #285628;
+    }
 
-.navbar-inverse .navbar-toggle:hover,
-.navbar-inverse .navbar-toggle:focus {
-  background-color: #333333;
-}
+    .navbar-inverse .navbar-toggle:hover,
+    .navbar-inverse .navbar-toggle:focus {
+        background-color: #285628;
+    }
 
 .navbar-inverse .navbar-toggle .icon-bar {
   background-color: #ffffff;
 }
 
-.navbar-inverse .navbar-collapse,
-.navbar-inverse .navbar-form {
-  border-color: #101010;
-}
+    .navbar-inverse .navbar-collapse,
+    .navbar-inverse .navbar-form {
+        border-color: #285628;
+    }
 
 .navbar-inverse .navbar-nav > .open > a,
 .navbar-inverse .navbar-nav > .open > a:hover,
@@ -4934,7 +4936,7 @@ a.list-group-item.active > .badge,
     font-weight: 200;
     line-height: 2.1428571435;
     color: inherit;
-    background-color: #F3A7A7;
+    background-color: #c9f3a7;
 }
 
 .jumbotron h1 {
@@ -4956,11 +4958,11 @@ a.list-group-item.active > .badge,
     padding-bottom: 48px;
   }
   .container .jumbotron {
-    padding-right: 60px;
-    padding-left: 60px;
+    padding-right: 50px;
+    padding-left: 50px;
   }
   .jumbotron h1 {
-    font-size: 63px;
+    font-size: 60px;
   }
 }
 
