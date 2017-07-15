@@ -21,16 +21,17 @@ body {
     white-space: normal;
 }
 
-/* Change the color of the header
-*/
-.navbar-inverse {
-    background-color: #285628 !important;
-    border-color: #285628;
-}
 
+    /* change the text color of brand */
     .navbar-inverse .navbar-brand {
         color: #f5f5f5 !important;
     }
+    /* Change the color of the header */
+    
+    .navbar-inverse {
+    background-color: #285628 !important;
+    border-color: #285628;
+}
     .navbar-inverse .navbar-toggle {
         border-color: #285628;
     }
@@ -47,7 +48,16 @@ body {
     max-width: 280px;
 }
 
+/* Change background color for junbotron */
 .jumbotron {
-   
+    font-family: 'Cambo', serif !important;
     background-color: #c9f3a7 !important;
+    background-size: cover !important;
+   
+  
 }
+
+    .jumbotron h1 {
+        font-family: 'Cambo', serif !important;
+        font-size: 50px !important;
+    }

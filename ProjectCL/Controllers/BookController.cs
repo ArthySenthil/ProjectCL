@@ -18,7 +18,7 @@ namespace ProjectCL.Controllers
         // GET: Book
         public ActionResult Index()
         {
-            return View(db.Books.ToList()); // list of books in database
+            return View(db.Books.ToList()); // return the list of books in database
         }
 
         // GET: Book/Details/5
@@ -29,7 +29,7 @@ namespace ProjectCL.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest,"Request cannot be completed, delete /Details in the URL and hit enter");
             }
             Book book = db.Books.Find(id);
-            // Check if there is book to see the details.
+            // Check if book exists.
             if (book == null)
             {
                 return HttpNotFound("No Book details found"); // return error message if null
@@ -68,7 +68,7 @@ namespace ProjectCL.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest, "Request cannot be completed, delete /Edit in the URL and hit enter");
             }
             Book book = db.Books.Find(id);
-            // check if there is book to edit.
+            // Check if book exists.
             if (book == null)
             {
                 return HttpNotFound();
@@ -84,7 +84,7 @@ namespace ProjectCL.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(book).State = EntityState.Modified; // chage the state to modified
+                db.Entry(book).State = EntityState.Modified; // set the state to modified
                 db.SaveChanges(); // save changes afer editing
                 return RedirectToAction("Index");
             }
@@ -117,7 +117,7 @@ namespace ProjectCL.Controllers
             db.SaveChanges(); // save cahnges to database.
             return RedirectToAction("Index");// return to books page
         }
-
+        
         protected override void Dispose(bool disposing)
         {
             if (disposing)
