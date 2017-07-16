@@ -13,12 +13,13 @@ namespace ProjectCL.Controllers
 {
     public class StudentController : Controller
     {
+        // Instantiate a database context object
         private ClubContext db = new ClubContext();
 
         // GET: Student
         public ActionResult Index()
         {
-            return View(db.Students.ToList());
+            return View(db.Students.ToList()); // Get a list of students from the Student entity
         }
 
         // GET: Student/Details/5
@@ -29,9 +30,10 @@ namespace ProjectCL.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Student student = db.Students.Find(id);
+            //check for null
             if (student == null)
             {
-                return HttpNotFound();
+                return HttpNotFound(); // return error
             }
             return View(student);
         }
@@ -53,7 +55,7 @@ namespace ProjectCL.Controllers
                 if (ModelState.IsValid)
                 {
                     db.Students.Add(student);
-                    db.SaveChanges();
+                    db.SaveChanges(); // save changes to database
                     return RedirectToAction("Index");
                 }
             }
@@ -71,12 +73,12 @@ namespace ProjectCL.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);// return error
             }
             Student student = db.Students.Find(id);
             if (student == null)
             {
-                return HttpNotFound();
+                return HttpNotFound();// return error
             }
             return View(student);
         }
@@ -98,9 +100,9 @@ namespace ProjectCL.Controllers
             {
                 try
                 {
-                    db.SaveChanges();
+                    db.SaveChanges(); // save the changes
 
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Index"); // return to students page
                 }
                 catch (DataException)
                 {
@@ -116,7 +118,7 @@ namespace ProjectCL.Controllers
          {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest); // return error.
             }
             if (saveChangesError.GetValueOrDefault())
             {
@@ -139,7 +141,7 @@ namespace ProjectCL.Controllers
             {
                 Student student = db.Students.Find(id);
                 db.Students.Remove(student);
-                db.SaveChanges();
+                db.SaveChanges(); // save the changes to database
             }
             catch (DataException)
             {

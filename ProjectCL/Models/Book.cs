@@ -7,15 +7,16 @@ using System.Web;
 
 namespace ProjectCL.Models
 {
+    // Model Book
     public class Book
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int BookID { get; set; }
+        public int BookID { get; set; } 
         public string Title { get; set; }
         public string Author { get; set; }
         public string ReadingLevel { get; set; }
 
-        [DisplayName("Books Assigned")]
+        [DisplayName("Books Assigned")] // change the display name
         public virtual ICollection<Assignment> Assignments { get; set; }
     }
 }

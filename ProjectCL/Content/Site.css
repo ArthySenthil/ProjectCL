@@ -56,7 +56,7 @@ body {
    
   
 }
-
+    /* Set font family and size for junbotron h1*/
     .jumbotron h1 {
         font-family: 'Cambo', serif !important;
         font-size: 50px !important;

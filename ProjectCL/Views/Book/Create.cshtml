@@ -4,6 +4,8 @@
     ViewBag.Title = "Create";
 }
 
+@*Create a new Book*@
+
 <h2>Create</h2>
 
 
@@ -15,6 +17,9 @@
         <h4>Book</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        @*Book ID*@
+
         <div class="form-group">
             @Html.LabelFor(model => model.BookID, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -22,6 +27,8 @@
                 @Html.ValidationMessageFor(model => model.BookID, "", new { @class = "text-danger" })
             </div>
         </div>
+
+        @*Book Title*@
 
         <div class="form-group">
             @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -31,6 +38,8 @@
             </div>
         </div>
 
+        @*Book Author*@
+
         <div class="form-group">
             @Html.LabelFor(model => model.Author, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -38,6 +47,8 @@
                 @Html.ValidationMessageFor(model => model.Author, "", new { @class = "text-danger" })
             </div>
         </div>
+
+        @*Book Reading Level*@
 
         <div class="form-group">
             @Html.LabelFor(model => model.ReadingLevel, htmlAttributes: new { @class = "control-label col-md-2" })

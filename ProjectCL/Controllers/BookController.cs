@@ -13,12 +13,13 @@ namespace ProjectCL.Controllers
 {
     public class BookController : Controller
     {
+        //Instantiate a database context object
         private ClubContext db = new ClubContext();
 
         // GET: Book
         public ActionResult Index()
         {
-            return View(db.Books.ToList()); // return the list of books in database
+            return View(db.Books.ToList()); // return the list of books from the book enetity
         }
 
         // GET: Book/Details/5

@@ -10,11 +10,11 @@ namespace ProjectCL.Models
     {
         
         public int ID { get; set; }
-        [DisplayName("Last Name")]
+        [DisplayName("Last Name")] // change the display name
         public string LastName { get; set; }
-        [DisplayName("First Name")]
+        [DisplayName("First Name")] // change the display name
         public string FirstName { get; set; }
-        [DisplayName("Enrollment Date")]
+        [DisplayName("Enrollment Date")] // change the display name
         public DateTime AssignmentDate { get; set; }
 
         public virtual ICollection<Assignment> Assignments { get; set; }

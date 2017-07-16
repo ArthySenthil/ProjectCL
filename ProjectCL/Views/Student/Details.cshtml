@@ -9,6 +9,7 @@
 <div>
     <h4>Student</h4>
     <hr />
+    @*Description List for Student Details*@
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.LastName)
@@ -43,6 +44,8 @@
                     <th>Author</th>
                     <th>Reading Group</th>
                 </tr>
+                @*Display assingned books for each student*@
+
                 @foreach (var item in Model.Assignments)
                 {
                     <tr>

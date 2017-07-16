@@ -3,13 +3,14 @@
 @{
     ViewBag.Title = "Students List";
 }
-
+@*Students List from Database*@
 <h2>Students List</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
+    @*Row for the headings*@
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.LastName)
@@ -22,6 +23,8 @@
         </th>
         <th></th>
     </tr>
+
+    @*Display all the students in the Student table*@
 
 @foreach (var item in Model) {
     <tr>

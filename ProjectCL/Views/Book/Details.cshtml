@@ -9,6 +9,7 @@
 <div>
     <h4>Book</h4>
     <hr />
+    <!--Horizontal description List for book details-->
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Title)
@@ -36,6 +37,7 @@
 
     </dl>
 </div>
+ <!--Hyperlinks-->
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.BookID }) |
     @Html.ActionLink("Back to Book List", "Index")

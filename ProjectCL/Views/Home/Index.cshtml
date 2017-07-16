@@ -3,26 +3,26 @@
     ViewBag.Title = "Kids Reading Club!";
 }
 
+@*Hompe page*@
+
 <div class="jumbotron">
     <h1>“Enrichment beyond the classroom”</h1>
     <p class="lead">READING PROGRAM FOR KIDS AGES 4 - 10.<br>THE PERFECT ﻿SOLUTION ﻿TO ​YOUR AFTER ​​SCHOOL DILEMMA!</p>
 </div>
 
 
-    <h2>BOOKS WE ARE READING THIS MONTH</h2>
-  <table class="table">
+<h2>BOOKS WE ARE READING THIS MONTH</h2>
+
+@*Table to list the books*@
+
+<table class="table">
     @foreach (var item in Model)
     {
         <tr>
-
             <td>
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
-
-
         </tr>
-
-
     }
 </table>
 

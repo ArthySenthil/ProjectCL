@@ -3,7 +3,7 @@
 @{
     ViewBag.Title = "Edit";
 }
-
+@*Edit a Book*@
 <h2>Edit</h2>
 
 
@@ -17,6 +17,8 @@
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.BookID)
 
+        @*Book Title*@
+
         <div class="form-group">
             @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -25,6 +27,8 @@
             </div>
         </div>
 
+        @*Book Author*@
+
         <div class="form-group">
             @Html.LabelFor(model => model.Author, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -32,6 +36,8 @@
                 @Html.ValidationMessageFor(model => model.Author, "", new { @class = "text-danger" })
             </div>
         </div>
+
+        @*Book Reading Level*@
 
         <div class="form-group">
             @Html.LabelFor(model => model.ReadingLevel, htmlAttributes: new { @class = "control-label col-md-2" })

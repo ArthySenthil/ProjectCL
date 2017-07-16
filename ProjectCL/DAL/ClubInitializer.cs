@@ -6,10 +6,13 @@ using System.Web;
 
 namespace ProjectCL.DAL
 {
+    //Drop and re-create the database whenever the model changes.
     public class ClubInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<ClubContext>
     {
+        // populate the Seed method with test data
         protected override void Seed(ClubContext context)
         {
+            //populate students
             var students = new List<Student>
             {
             new Student{FirstName="Shrinita",LastName="Senthilkumar",AssignmentDate=DateTime.Parse("2017-06-01")},
@@ -23,7 +26,9 @@ namespace ProjectCL.DAL
             };
 
             students.ForEach(s => context.Students.Add(s));
-            context.SaveChanges();
+            context.SaveChanges();  // save changes to the database
+
+            // populate books
             var books = new List<Book>
             {
             new Book{BookID=1050,Title="Goldilocks and the 3 bears",Author="xxx",ReadingLevel="A",},
@@ -33,7 +38,9 @@ namespace ProjectCL.DAL
             
             };
             books.ForEach(s => context.Books.Add(s));
-            context.SaveChanges();
+            context.SaveChanges(); // save changes to the database
+
+            //populate books assigned
             var assignments = new List<Assignment>
             {
             new Assignment{StudentID=1,BookID=1050,Level=Level.A},
@@ -43,7 +50,7 @@ namespace ProjectCL.DAL
             
             };
             assignments.ForEach(s => context.Assignments.Add(s));
-            context.SaveChanges();
+            context.SaveChanges();  // save changes to the database
         }
     }
 
