@@ -14,6 +14,15 @@ namespace ProjectCL.Models
         public string LastName { get; set; }
         [DisplayName("First Name")] // change the display name
         public string FirstName { get; set; }
+        [DisplayName("Full Name")]
+        public string FullName
+        {
+            get
+            {
+                return FirstName + " " + LastName;
+            }
+        }
+
         [DisplayName("Enrollment Date")] // change the display name
         public DateTime AssignmentDate { get; set; }
 

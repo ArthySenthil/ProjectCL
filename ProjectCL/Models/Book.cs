@@ -7,6 +7,10 @@ using System.Web;
 
 namespace ProjectCL.Models
 {
+    public enum ReadingLevel
+    {
+        A, B, C, D, E, F
+    }
     // Model Book
     public class Book
     {
@@ -14,7 +18,8 @@ namespace ProjectCL.Models
         public int BookID { get; set; } 
         public string Title { get; set; }
         public string Author { get; set; }
-        public string ReadingLevel { get; set; }
+     
+        public ReadingLevel? ReadingLevel { get; set; }
 
         [DisplayName("Books Assigned")] // change the display name
         public virtual ICollection<Assignment> Assignments { get; set; }

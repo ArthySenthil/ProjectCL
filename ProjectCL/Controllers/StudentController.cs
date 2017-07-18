@@ -25,6 +25,7 @@ namespace ProjectCL.Controllers
         // GET: Student/Details/5
         public ActionResult Details(int? id)
         {
+            
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -150,6 +151,12 @@ namespace ProjectCL.Controllers
             }
             return RedirectToAction("Index");
         }
+
+        public ActionResult Assign()
+        {
+            return View(); //  get a list of books from the book entity
+        }
+
 
         protected override void Dispose(bool disposing)
         {

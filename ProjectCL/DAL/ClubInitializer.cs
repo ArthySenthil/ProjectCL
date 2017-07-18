@@ -31,10 +31,10 @@ namespace ProjectCL.DAL
             // populate books
             var books = new List<Book>
             {
-            new Book{BookID=1050,Title="Goldilocks and the 3 bears",Author="xxx",ReadingLevel="A",},
-             new Book{BookID=4022,Title="The hungry caterpillar",Author="yyy",ReadingLevel="B",},
-             new Book{BookID=4041,Title="Cinderella",Author="zzz",ReadingLevel="C",},
-            new Book{BookID=1045,Title="Snow White",Author="aaa",ReadingLevel="D",},
+            new Book{BookID=1050,Title="Goldilocks and the 3 bears",Author="xxx",ReadingLevel=ReadingLevel.A,},
+             new Book{BookID=4022,Title="The hungry caterpillar",Author="yyy",ReadingLevel=ReadingLevel.B,},
+             new Book{BookID=4041,Title="Cinderella",Author="zzz",ReadingLevel=ReadingLevel.A,},
+            new Book{BookID=1045,Title="Snow White",Author="aaa",ReadingLevel=ReadingLevel.C,},
             
             };
             books.ForEach(s => context.Books.Add(s));
@@ -43,10 +43,10 @@ namespace ProjectCL.DAL
             //populate books assigned
             var assignments = new List<Assignment>
             {
-            new Assignment{StudentID=1,BookID=1050,Level=Level.A},
-            new Assignment{StudentID=1,BookID=4022,Level=Level.C},
-            new Assignment{StudentID=1,BookID=4041,Level=Level.B},
-            new Assignment{StudentID=2,BookID=1045,Level=Level.B},
+            new Assignment{StudentID=1,BookID=1050,CheckOutDate=DateTime.Today,DueDate=DateTime.Today.AddDays(10)},
+            new Assignment{StudentID=1,BookID=4022,CheckOutDate=DateTime.Today,DueDate=DateTime.Today.AddDays(10)},
+            new Assignment{StudentID=1,BookID=4041,CheckOutDate=DateTime.Today,DueDate=DateTime.Today.AddDays(10)},
+            new Assignment{StudentID=2,BookID=1045,CheckOutDate=DateTime.Today,DueDate=DateTime.Today.AddDays(10)},
             
             };
             assignments.ForEach(s => context.Assignments.Add(s));
