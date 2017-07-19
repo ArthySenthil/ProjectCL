@@ -40,15 +40,28 @@ namespace ProjectCL.DAL
             books.ForEach(s => context.Books.Add(s));
             context.SaveChanges(); // save changes to the database
 
-            //populate books assigned
+            /*populate books assigned
+            var assignments = new List<Assignment>
+            {
+            new Assignment{StudentID=1,BookID=1050},
+            new Assignment{StudentID=1,BookID=4022},
+            new Assignment{StudentID=1,BookID=4041},
+            new Assignment{StudentID=2,BookID=1045},
+           
+
+            };*/
+
+           // populate books assigned
             var assignments = new List<Assignment>
             {
             new Assignment{StudentID=1,BookID=1050,CheckOutDate=DateTime.Today,DueDate=DateTime.Today.AddDays(10)},
             new Assignment{StudentID=1,BookID=4022,CheckOutDate=DateTime.Today,DueDate=DateTime.Today.AddDays(10)},
             new Assignment{StudentID=1,BookID=4041,CheckOutDate=DateTime.Today,DueDate=DateTime.Today.AddDays(10)},
             new Assignment{StudentID=2,BookID=1045,CheckOutDate=DateTime.Today,DueDate=DateTime.Today.AddDays(10)},
-            
+
+
             };
+
             assignments.ForEach(s => context.Assignments.Add(s));
             context.SaveChanges();  // save changes to the database
         }

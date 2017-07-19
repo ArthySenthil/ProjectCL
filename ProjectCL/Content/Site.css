@@ -53,11 +53,15 @@ body {
     font-family: 'Cambo', serif !important;
     background-color: #c9f3a7 !important;
     background-size: cover !important;
-   
-  
+    font-weight: 100 !important;
+    padding: 10px !important;
+    text-align:center !important;
 }
     /* Set font family and size for junbotron h1*/
     .jumbotron h1 {
         font-family: 'Cambo', serif !important;
-        font-size: 50px !important;
+       
     }
+
+
+

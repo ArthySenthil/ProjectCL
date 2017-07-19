@@ -40,6 +40,7 @@
         <dd>
             <table class="table">
                 <tr>
+                    <th>Assignment ID</th>
                     <th>Book Title</th>
                     <th>Author</th>
                     <th>Reading Level</th>
@@ -47,10 +48,14 @@
                     <th>Due Date</th>
                 </tr>
                 @*Display assingned books for each student*@
+                
 
                 @foreach (var item in Model.Assignments)
                 {
                     <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AssignmentID)
+                        </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.Book.Title)
                         </td>

@@ -18,7 +18,9 @@ namespace ProjectCL.Controllers
 
         // GET: Student
         public ActionResult Index()
+
         {
+
             return View(db.Students.ToList()); // Get a list of students from the Student entity
         }
 

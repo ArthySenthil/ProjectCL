@@ -14,7 +14,9 @@ namespace ProjectCL.Models
         public string LastName { get; set; }
         [DisplayName("First Name")] // change the display name
         public string FirstName { get; set; }
-        [DisplayName("Full Name")]
+
+        // Concatenate first and last name and get as read only
+        [DisplayName("Student Name")]
         public string FullName
         {
             get

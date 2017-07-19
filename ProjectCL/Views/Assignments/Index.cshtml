@@ -1,0 +1,54 @@
+﻿@model IEnumerable<ProjectCL.Models.Assignment>
+
+@{
+    ViewBag.Title = "Assignments";
+}
+
+<h2>Assignments</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@*Create a table to display all assignments*@
+<table class="table">
+    @*Create a heading row*@
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Book.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Student.FullName)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.CheckOutDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DueDate)
+        </th>
+        <th></th>
+    </tr>
+    @*populate data from Book, Student and Assignments*@
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Book.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Student.FullName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CheckOutDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DueDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AssignmentID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AssignmentID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AssignmentID })
+        </td>
+    </tr>
+}
+
+</table>
