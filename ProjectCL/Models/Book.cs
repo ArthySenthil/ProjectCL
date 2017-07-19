@@ -23,7 +23,7 @@ namespace ProjectCL.Models
 
         [DisplayName("Reading Level(A to F)")] // change the display name
       
-        public ReadingLevel? ReadingLevel { get; set; }
+        public ReadingLevel? ReadingLevel { get; set; } // ReadingLevel is nullable
 
         [DisplayName("Books Assigned")] // change the display name
         public virtual ICollection<Assignment> Assignments { get; set; }

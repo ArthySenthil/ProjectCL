@@ -19,12 +19,12 @@ namespace ProjectCL.Models
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime CheckOutDate { get; set; }
         [DisplayName("Due Date")] // change the display name
-        [DataType(DataType.Date)]
+        [DataType(DataType.Date)] // Format the date
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime DueDate { get; set; }
 
-        // public Level? Level { get; set; } // Grade Level. Seed Method uses it but may be changed in the future
-
+        
+        //Navigation properties to hold multiple entities
         public virtual Book Book { get; set; }
         public virtual Student Student { get; set; }
     }
