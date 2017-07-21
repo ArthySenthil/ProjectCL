@@ -117,6 +117,7 @@ namespace ProjectCL.Controllers
         }
 
         // GET: Student/Delete/5
+        //Get Student record to delete
         public ActionResult Delete(int? id, bool? saveChangesError = false)
          {
             if (id == null)
@@ -136,6 +137,7 @@ namespace ProjectCL.Controllers
             return View(student);
         }
 
+        //Delete Student record and save changes to database
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id)

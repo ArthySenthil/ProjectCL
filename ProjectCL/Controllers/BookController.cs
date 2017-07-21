@@ -23,13 +23,14 @@ namespace ProjectCL.Controllers
         }
 
         // GET: Book/Details/5
+        //Get the book deails to edit
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest,"Request cannot be completed, delete /Details in the URL and hit enter");
             }
-            Book book = db.Books.Find(id);
+            Book book = db.Books.Find(id);// fing the book using book id
             // Check if book exists.
             if (book == null)
             {
@@ -45,6 +46,7 @@ namespace ProjectCL.Controllers
         }
 
         // POST: Book/Create
+        //Add new nook to database
         
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -62,6 +64,7 @@ namespace ProjectCL.Controllers
         }
 
         // GET: Book/Edit/5
+        //Get the book to edit
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -78,7 +81,7 @@ namespace ProjectCL.Controllers
         }
 
         // POST: Book/Edit/5
-
+        //Edit the book details and save the database
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "BookID,Title,Author,ReadingLevel")] Book book)
@@ -93,6 +96,7 @@ namespace ProjectCL.Controllers
         }
 
         // GET: Book/Delete/5
+        //Get the book to delete
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -109,6 +113,7 @@ namespace ProjectCL.Controllers
         }
 
         // POST: Book/Delete/5
+        //Delete the book record and save the database
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

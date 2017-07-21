@@ -13,13 +13,14 @@ namespace ProjectCL.Controllers
 {
     public class AssignmentsController : Controller
     {
+        //Instantiate a database context object
         private ClubContext db = new ClubContext();
 
         // GET: Assignments
         public ActionResult Index()
         {
             var assignments = db.Assignments.Include(a => a.Book).Include(a => a.Student);
-            return View(assignments.ToList());
+            return View(assignments.ToList()); // return list of assignments along with book and student entities
         }
 
         // GET: Assignments/Details/5
@@ -40,14 +41,13 @@ namespace ProjectCL.Controllers
         // GET: Assignments/Create
         public ActionResult Create()
         {
-            ViewBag.BookID = new SelectList(db.Books, "BookID", "Title");
-            ViewBag.StudentID = new SelectList(db.Students, "ID", "FullName");
+            ViewBag.BookID = new SelectList(db.Books, "BookID", "Title"); //populate book title dropdown list
+            ViewBag.StudentID = new SelectList(db.Students, "ID", "FullName");// populate full name dropdown list
             return View();
         }
 
         // POST: Assignments/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+       
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "AssignmentID,BookID,StudentID,CheckOutDate,DueDate")] Assignment assignment)
@@ -55,16 +55,17 @@ namespace ProjectCL.Controllers
             if (ModelState.IsValid)
             {
                 db.Assignments.Add(assignment);
-                db.SaveChanges();
+                db.SaveChanges(); // save changes to database
                 return RedirectToAction("Index");
             }
 
-            ViewBag.BookID = new SelectList(db.Books, "BookID", "Title", assignment.BookID);
-            ViewBag.StudentID = new SelectList(db.Students, "ID", "FullName", assignment.StudentID);
+            ViewBag.BookID = new SelectList(db.Books, "BookID", "Title", assignment.BookID); //populate book title dropdown list
+            ViewBag.StudentID = new SelectList(db.Students, "ID", "FullName", assignment.StudentID); // populate full name dropdown list
             return View(assignment);
         }
 
         // GET: Assignments/Edit/5
+        //Get the record to be updated
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -76,14 +77,12 @@ namespace ProjectCL.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.BookID = new SelectList(db.Books, "BookID", "Title", assignment.BookID);
-            ViewBag.StudentID = new SelectList(db.Students, "ID", "FullName", assignment.StudentID);
+            ViewBag.BookID = new SelectList(db.Books, "BookID", "Title", assignment.BookID); //populate book title dropdown list
+            ViewBag.StudentID = new SelectList(db.Students, "ID", "FullName", assignment.StudentID); // populate full name dropdown list
             return View(assignment);
         }
 
-        // POST: Assignments/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        //Update the record and save changes to database
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "AssignmentID,BookID,StudentID,CheckOutDate,DueDate")] Assignment assignment)
@@ -94,12 +93,13 @@ namespace ProjectCL.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.BookID = new SelectList(db.Books, "BookID", "Title", assignment.BookID);
-            ViewBag.StudentID = new SelectList(db.Students, "ID", "FullName", assignment.StudentID);
+            ViewBag.BookID = new SelectList(db.Books, "BookID", "Title", assignment.BookID); //populate book title dropdown list
+            ViewBag.StudentID = new SelectList(db.Students, "ID", "FullName", assignment.StudentID); // populate full name dropdown list
             return View(assignment);
         }
 
         // GET: Assignments/Delete/5
+        //Get the record to be deleted
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -115,6 +115,7 @@ namespace ProjectCL.Controllers
         }
 
         // POST: Assignments/Delete/5
+        //Delete record and save changes to database
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

@@ -16,7 +16,8 @@ namespace ProjectCL.Models
     public class Book
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int BookID { get; set; } 
+        public int BookID { get; set; }
+        [Required] // Cannot be empty
         public string Title { get; set; }
         public string Author { get; set; }
 

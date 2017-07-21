@@ -48,7 +48,7 @@ body {
     max-width: 280px;
 }
 
-/* Change background color for junbotron */
+/* Change properties for junbotron */
 .jumbotron {
     font-family: 'Cambo', serif !important;
     background-color: #c9f3a7 !important;
